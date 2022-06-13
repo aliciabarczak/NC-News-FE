@@ -1,13 +1,114 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Header {
+  display: flex;
+  text-align: center;
 }
+
+.Nav{
+    display: flex;
+    justify-content: space-evenly;
+    border: solid;
+    padding: 1rem;
+}
+
+.Nav p {
+  margin: 15px;
+}
+
+.ArticleCard {
+  border: solid; 
+  text-align: left;
+  margin: 10px;
+  padding: 1rem;
+}
+
+h4 {
+  font-style: italic;
+}
+
+.cardText{
+  margin-left: 15px
+}
+
+.CommentsButtons{
+  margin: 2px;
+}
+
+@media (min-width: 600px) {
+  .Nav{
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-area: nav;
+    max-width: 150px;
+    
+}
+  main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-area: main;
+  }
+  
+  .App {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav main";
+    grid-template-columns: 20% auto;
+    grid-template-rows: auto auto;
+  
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .Nav{
+    max-width: 200px;
+    
+}
+  main{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .App {
+    grid-template-areas:
+      "header header header"
+      "nav main main";
+    grid-template-columns: 20% auto auto;
+    grid-template-rows: auto auto auto;
+  
+  }
+}
+
+@media (min-width: 1200px) {
+  main{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .App {
+    grid-template-areas:
+      "header header header header"
+      "nav main main main";
+    grid-template-columns: 15% auto auto auto;
+    grid-template-rows: auto auto auto auto;
+  
+  }
+}
+
+@media (min-width: 1400px) {
+  main{
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .App {
+    grid-template-areas:
+      "header header header header header"
+      "nav main main main main";
+    grid-template-columns: 10% auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+  
+  }
+}
+
