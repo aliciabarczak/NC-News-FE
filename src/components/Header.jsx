@@ -1,6 +1,6 @@
 export default function () {
     return (
-        <header>
+        <header className="Header">
             <h1>NC News</h1>
         </header>
     )

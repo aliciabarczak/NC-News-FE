@@ -32,7 +32,7 @@ useEffect(() => {
 }, []);
 
     return (
-        <>
+        <main className="ListOfArticles">
         {articles.map(({article_id, title, author, created_at, comment_count, votes}) => {
             return (
                 <ArticleCard
@@ -44,6 +44,6 @@ useEffect(() => {
                 votes = {votes} />
             )
         })}
-        </>
+        </main>
     )
 }
