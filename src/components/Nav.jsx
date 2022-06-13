@@ -1,11 +1,29 @@
 import {Link} from "react-router-dom";
+import {useState} from "react";
+
 export default function Nav() {
+
+    const [topics, setTopics] = useState([
+        {
+        "slug": "coding",
+        "description": "Code is love, code is life"
+        },
+        {
+        "slug": "football",
+        "description": "FOOTIE!"
+        }
+    ])
+
     return (
         <nav className="Nav">
             <Link to="/">Home</Link>
-            <p>Topic 1</p>
-            <p>Topic 2</p>
-            <p>Topic 3</p>
+            {topics.map(({slug}) => {
+                return (
+                    <Link to="/">{slug}</Link>
+                )
+            })
+        }
+
         </nav>
     )
 }
