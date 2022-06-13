@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard.jsx"
+import {getArticles} from "./../Utils/api.js"
 
 
 export default function ListOfArticles() {
@@ -23,6 +24,12 @@ const [articles, setArticles] = useState([
         "comment_count": "7"
         }
 ])
+
+useEffect(() => {
+    getArticles().then(({articles}) => {
+        setArticles(articles)
+    })
+}, []);
 
     return (
         <>
