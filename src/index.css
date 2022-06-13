@@ -2,6 +2,17 @@ body {
   margin: 0;
 }
 
+.Nav{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+
+.Nav p {
+  margin: 15px;
+}
+
 .ArticleCard {
   border: solid; 
   text-align: left;
