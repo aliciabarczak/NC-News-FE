@@ -5,8 +5,11 @@ export default function ArticleCard({title, author, created_at, comment_count, v
                 <h2>{title}</h2>
                 <h3>by {author}</h3>
                 <h4>Posted on {created_at.split("T")[0]}</h4>
+                <button className="CommentsButtons">view article</button>
                 <h5>Likes({votes})</h5>
                 <h5>Comments({comment_count})</h5>
+                <button className="CommentsButtons">view all</button>
+                <button className="CommentsButtons">post</button>
         </section>
         </div>
     )
