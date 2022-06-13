@@ -4,33 +4,17 @@ import {getArticles} from "./../Utils/api.js"
 
 
 export default function ListOfArticles() {
-const [articles, setArticles] = useState([
-    {
-        "article_id": 34,
-        "title": "The Notorious MSG’s Unlikely Formula For Success",
-        "topic": "cooking",
-        "author": "grumpy19",
-        "created_at": "2020-11-22T11:13:00.000Z",
-        "votes": 0,
-        "comment_count": "11"
-        },
-        {
-        "article_id": 12,
-        "title": "The battle for Node.js security has only begun",
-        "topic": "coding",
-        "author": "tickle122",
-        "created_at": "2020-11-15T13:25:00.000Z",
-        "votes": 0,
-        "comment_count": "7"
-        }
-])
+const [articles, setArticles] = useState([]);
+const [isLoading, setIsLoading] = useState(true);
 
 useEffect(() => {
     getArticles().then(({articles}) => {
-        setArticles(articles)
+        setArticles(articles);
+        setIsLoading(false);
     })
 }, []);
 
+if(isLoading) return <p>...loading</p>
     return (
         <main className="ListOfArticles">
         {articles.map(({article_id, title, author, created_at, comment_count, votes}) => {
