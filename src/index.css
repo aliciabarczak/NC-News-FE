@@ -63,8 +63,21 @@ h4 {
   margin-bottom: 10px;
 }
 
-.viewAllCommentsBts{
-  text-decoration: none;
+.postComment{
+  margin-left: 10px;
+  padding: 4rem;
+}
+.postCommentTxtBx{
+  width: 500px;
+  height: 150px;
+  margin: 10px;
+}
+.postCommentUsernameBx{
+  width: 500px;
+  margin: 10px;
+}
+.submit-btn{
+  margin-left: 0px;
 }
 
 .likesButtons {

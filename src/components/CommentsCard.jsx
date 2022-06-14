@@ -27,6 +27,15 @@ return (
     <div className="CommentCard">
     <h3>All Comments for:</h3>
     <h2 className="CommentsCardHeader">{articleTitle}</h2>
+    <form className="postComment" action="">
+        <label><p>Post comment:</p> 
+            <input className="postCommentTxtBx" type="text" placeholder="comment..."></input>
+            <br></br>
+            <input className="postCommentUsernameBx" type="text" placeholder="username"></input>
+        </label>
+        <br></br>
+        <button className="submit-btn" type="submit"> Submit</button>
+    </form>
     <ul className="Comments">
         {allComments.map(({comment_id, body, author, votes, created_at}) => {
             return (
