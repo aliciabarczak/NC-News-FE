@@ -23,3 +23,9 @@ export const getTopics = () => {
         return data
     })
 }
+
+export const patchLikes = (article_id, inc_votes) => {
+    return articlesApi.patch(`/articles/${article_id}`, {inc_votes: inc_votes}).then(({ data }) => {
+        return data
+    })
+}
