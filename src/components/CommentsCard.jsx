@@ -15,9 +15,16 @@ useEffect(() => {
 
 return (
     <>
-    <ul>
-        {allComments.map(({comment_id, body}) => {
-            return <li key={comment_id}>{body}</li>
+    <ul className="Comments">
+        {allComments.map(({comment_id, body, author, votes, created_at}) => {
+            return (
+            <section className="Comment">
+            <h4><mark>{author}</mark> wrote:</h4>
+            <li className="commentText" key={comment_id}>{body}</li>
+            <p className="commentDate">date: {created_at.split("T")[0]}</p>
+            <b className="commentVote">votes ({votes})</b>
+            </section>
+            )
         })}
     </ul>
     </>
