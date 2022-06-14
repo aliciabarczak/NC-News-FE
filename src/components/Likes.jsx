@@ -10,10 +10,19 @@ export default function Likes({article_id, votes}) {
             setLikesChanges((currentLikes) => currentLikes - 1)
         })
     }
+
+    const handleDislike = (event) => {
+        setLikesChanges((currentLikes) => currentLikes - 1)
+        patchLikes(article_id, -1).catch((err) => {
+            setLikesChanges((currentLikes) => currentLikes + 1)
+        })
+    }
+    
     return (
         <>
     <h5>Likes({votes + likesChanges})</h5>
-    <button onClick={handleLike}>Like This Article</button>
+    <button className="likesButtons" onClick={handleLike} disabled={likesChanges > 0}>👍</button>
+    <button className="likesButtons" onClick={handleDislike} disabled={likesChanges < 0}>👎</button>
     </>
     )
 }
