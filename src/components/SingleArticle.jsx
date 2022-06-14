@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getArticleById } from "./../Utils/api.js";
 import Likes from "./Likes.jsx"
 
@@ -25,6 +25,7 @@ if(isLoading) return <p>...loading</p>
          <p>{singleArticle.body}</p>
          <Likes article_id={article_id} votes={singleArticle.votes}/>
          <h5>Comments({singleArticle.comment_count})</h5>
+         <button className="viewAllCommentsBts"><Link className="CommentsButtons" to={`/articles/${article_id}/comments`}>view all</Link></button>
       </div>
     );
   };
