@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
-import ArticleCard from "./ArticleCard.jsx"
-import {getArticles} from "./../Utils/api.js"
+import ArticleCard from "./ArticleCard.jsx";
+import { getArticles } from "./../Utils/api.js";
 
 
-export default function ListOfArticles() {
+export default function ListOfArticles({search}) {
 const [articles, setArticles] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
 
+
 useEffect(() => {
-    getArticles().then(({articles}) => {
+    getArticles(search).then(({articles}) => {
         setArticles(articles);
         setIsLoading(false);
     })
-}, []);
+}, [search]);
 
 if(isLoading) return <p>...loading</p>
     return (
