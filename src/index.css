@@ -4,7 +4,7 @@ body {
 
 .Header {
   display: flex;
-  text-align: center;
+  margin-left: 40%;
 }
 
 .Nav{
@@ -38,13 +38,23 @@ h4 {
 }
 
 @media (min-width: 600px) {
+  .Header {
+    margin-left: 52%;
+    grid-area: header;
+  }
+
   .Nav{
     flex-direction: column;
     justify-content: flex-start;
     grid-area: nav;
     max-width: 150px;
-    
 }
+
+.SingleArticle{
+  margin: auto;
+  padding: 2rem;
+}
+
   main{
     display: grid;
     grid-template-columns: repeat(2, 1fr);

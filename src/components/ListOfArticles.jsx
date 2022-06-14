@@ -22,6 +22,7 @@ if(isLoading) return <p>...loading</p>
             return (
                 <ArticleCard
                 key = {article_id}
+                article_id = {article_id}
                 title = {title}
                 author = {author}
                 created_at = {created_at}
