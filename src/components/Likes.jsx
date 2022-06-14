@@ -3,16 +3,13 @@ import {useState} from "react";
 
 export default function Likes({article_id, votes}) {
     const [likesChanges, setLikesChanges] = useState(0)
+
     const handleLike = (event) => {
-        patchLikes(article_id, 1).then(() => {
-            setLikesChanges((currentLikes) => currentLikes + 1)
-            console.log(likesChanges)
-            
-        }).catch((err) => {
-            console.dir(err);
+        setLikesChanges((currentLikes) => currentLikes + 1)
+        patchLikes(article_id, 1).catch((err) => {
+            setLikesChanges((currentLikes) => currentLikes - 1)
         })
     }
-
     return (
         <>
     <h5>Likes({votes + likesChanges})</h5>
