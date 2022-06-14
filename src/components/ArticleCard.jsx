@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CommentsCard from "./CommentsCard.jsx"
 
 export default function ArticleCard({article_id, title, author, created_at, comment_count, votes}) {
     return (
@@ -10,7 +11,7 @@ export default function ArticleCard({article_id, title, author, created_at, comm
                 <Link to={`/articles/${article_id}`}>View Article</Link>
                 <h5>Likes({votes})</h5>
                 <h5>Comments({comment_count})</h5>
-                <button className="CommentsButtons">view all</button>
+                <button><Link className="CommentsButtons" to={`/articles/${article_id}/comments`}>view all</Link></button>
                 <button className="CommentsButtons">post</button>
         </section>
         </div>

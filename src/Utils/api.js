@@ -29,3 +29,9 @@ export const patchLikes = (article_id, inc_votes) => {
         return data
     })
 }
+
+export const getComments = (article_id) => {
+    return articlesApi.get(`/articles/${article_id}/comments`).then(({ data }) => {
+        return data
+    })
+}
