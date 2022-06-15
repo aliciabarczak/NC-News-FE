@@ -5,13 +5,13 @@ import SortBy from "./SortBy.jsx"
 
 
 export default function ListOfArticles({search}) {
-const [articles, setArticles] = useState([]);
+const [fetchedArticles, setFetchedArticles] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
 
 
 useEffect(() => {
     getArticles(search).then(({articles}) => {
-        setArticles(articles);
+        setFetchedArticles(articles);
         setIsLoading(false);
     })
 }, [search]);
@@ -19,9 +19,9 @@ useEffect(() => {
 if(isLoading) return <p>...loading</p>
     return ( 
     <div>
-        <SortBy />
+        <SortBy fetchedArticles={fetchedArticles} setFetchedArticles={setFetchedArticles}/>
         <main className="ListOfArticles">
-        {articles.map(({article_id, title, author, created_at, comment_count, votes}) => {
+        {fetchedArticles.map(({article_id, title, author, created_at, comment_count, votes}) => {
             return (
                 <ArticleCard
                 key = {article_id}
