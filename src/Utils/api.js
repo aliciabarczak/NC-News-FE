@@ -43,3 +43,9 @@ export const postComment = (article_id, body, username) => {
         return data
     })
 }
+
+export const getUsers = () => {
+    return articlesApi.get(`/users`).then(({ data }) => {
+        return data
+    })
+}

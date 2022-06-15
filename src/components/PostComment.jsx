@@ -23,7 +23,7 @@ const handleSubmit = (event) => {
 
 return (
 <div className="postCommentForm">
-    <form className="postComment" method="get" action="/PostedCommentMsg.jsx" onSubmit={handleSubmit}>
+    <form className="postComment" onSubmit={handleSubmit}>
         <div> {sucessMessage === true
                 ? <p className="sPostCommentMsg">Your comment has been posted!</p> 
                 : failMessage === true 
