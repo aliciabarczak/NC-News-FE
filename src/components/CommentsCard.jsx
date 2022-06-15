@@ -28,7 +28,7 @@ return (
     <div className="CommentCard">
     <h3>All Comments for:</h3>
     <h2 className="CommentsCardHeader">{articleTitle}</h2>
-    <PostComment />
+    <PostComment article_id={article_id} />
     <ul className="Comments">
         {allComments.map(({comment_id, body, author, votes, created_at}) => {
             return (

@@ -40,7 +40,7 @@ h4 {
 .Comments{
   text-align: left;
   list-style: none;
-  margin:0;
+  margin: 15px;
 }
 
 .Comment{
@@ -63,21 +63,24 @@ h4 {
   margin-bottom: 10px;
 }
 
-.postComment{
-  margin-left: 10px;
-  padding: 4rem;
-}
 .postCommentTxtBx{
-  width: 500px;
-  height: 150px;
-  margin: 10px;
+  width: 400px;
+  height: 120px;
+  margin: 15px;
 }
 .postCommentUsernameBx{
-  width: 500px;
-  margin: 10px;
+  width: 150px;
+  margin: 15px;
 }
 .submit-btn{
   margin-left: 0px;
+}
+
+.sPostCommentMsg {
+  color: green;
+}
+.fPostCommentMsg {
+  color: red;
 }
 
 .likesButtons {
@@ -88,12 +91,24 @@ h4 {
   grid-display: commentHeader; 
 }
 
+.postCommentMsg {
+  colour: red;
+}
+
 @media (min-width: 600px) {
+  .postCommentTxtBx{
+    width: 400px;
+    height: 120px;
+    margin: 10px;
+  }
+  .postCommentUsernameBx{
+    width: 150px;
+    margin: 10px;
+  }
   .Header {
     margin-left: 52%;
     grid-area: header;
   }
-
   .Nav{
     flex-direction: column;
     justify-content: flex-start;

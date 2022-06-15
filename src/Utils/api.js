@@ -35,3 +35,10 @@ export const getComments = (article_id) => {
         return data
     })
 }
+
+export const postComment = (article_id, body, username) => {
+    const responseBody = {username, body}
+    return articlesApi.post(`/articles/${article_id}/comments`, responseBody).then(({data}) => {
+        return data
+    })
+}
