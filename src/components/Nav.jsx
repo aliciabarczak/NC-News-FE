@@ -12,10 +12,10 @@ const [topics, setTopics] = useState([])
 
     return (
         <nav className="Nav">
-            <Link to="/">Home</Link>
+            <Link className="navLinks" to="/">Home</Link>
             {topics.map(({slug}, index) => {
                 return (
-                    <Link to={`articles?topic=${slug}`} key={index}>{slug}</Link>
+                    <Link className="navLinks" to={`articles?topic=${slug}`} key={index}>{slug}</Link>
                 )
             })
         }

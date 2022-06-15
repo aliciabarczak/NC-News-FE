@@ -5,7 +5,7 @@ import PostComment from "./PostComment.jsx"
 
 export default function CommentsCard(){
 const [allComments, setAllComments] = useState([]);
-const [articleTitle, setArticleTitle] = useState({});
+const [articleTitle, setArticleTitle] = useState([]);
 const { article_id } = useParams(); 
 const [isLoading, setIsLoading] = useState(true);
 

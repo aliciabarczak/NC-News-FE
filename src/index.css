@@ -95,6 +95,31 @@ h4 {
   colour: red;
 }
 
+.SortByForm {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropDown {
+  padding: 0.5rem;
+}
+
+.dropDownMenu{
+  margin-left: 5px;
+}
+
+.radio{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.Ascending {
+  margin-right: 10px;
+}
+
 @media (min-width: 600px) {
   .postCommentTxtBx{
     width: 400px;
@@ -110,10 +135,18 @@ h4 {
     grid-area: header;
   }
   .Nav{
+    padding-top: 2rem;
     flex-direction: column;
     justify-content: flex-start;
     grid-area: nav;
     max-width: 150px;
+    height: auto;
+    margin-top: 45px
+}
+
+.navLinks{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .SingleArticle{
