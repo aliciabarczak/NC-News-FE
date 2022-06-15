@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import {getArticles} from "./../Utils/api.js"
 
 export default function SortBy({setFetchedArticles}) {
-    const [selectedOption, setSelectedOption ] = useState("sort_by=created_at");
+    const [selectedOption, setSelectedOption ] = useState("created_at");
     const [radioOption, setRadioOption ] = useState("asc");
  
     useEffect(() => {
@@ -34,6 +34,15 @@ export default function SortBy({setFetchedArticles}) {
       </select>
     </label>
     <label className="radio">
+    <div className="Descending">
+    Descending
+    <input 
+    className="radio-btn" 
+    type="radio" 
+    value="desc" 
+    name="ascending/descending"
+    onChange={(event) => {setRadioOption(event.target.value)}}></input>
+    </div>
     <div className="Ascending">
     Ascending
     <input 
@@ -43,15 +52,6 @@ export default function SortBy({setFetchedArticles}) {
         name="ascending/descending"
         onChange={(event) => {setRadioOption(event.target.value)}}
         ></input>
-    </div>
-    <div className="Descending">
-    Descending
-    <input 
-    className="radio-btn" 
-    type="radio" 
-    value="desc" 
-    name="ascending/descending"
-    onChange={(event) => {setRadioOption(event.target.value)}}></input>
     </div>
     </label>
   </form> 
