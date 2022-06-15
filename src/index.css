@@ -127,12 +127,17 @@ h4 {
 .logInBtn{
   width: 70px;
   height: 35px;
-  align-items: right;
-  margin-left:80px;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+
 }
 
 @media (min-width: 600px) {
+  .logInBtn{
+    margin-left:80px;
+    margin-top: 10px;
+  }
+  
   .postCommentTxtBx{
     width: 400px;
     height: 120px;
@@ -152,6 +157,7 @@ h4 {
     justify-content: flex-start;
     grid-area: nav;
     max-width: 150px;
+    min-height: 1000px;
     height: auto;
     margin-top: 45px
 }
