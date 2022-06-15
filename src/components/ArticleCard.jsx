@@ -12,7 +12,6 @@ export default function ArticleCard({article_id, title, author, created_at, comm
                 <h5>Likes({votes})</h5>
                 <h5>Comments({comment_count})</h5>
                 <button className="viewAllCommentsBts"><Link className="CommentsButtons" to={`/articles/${article_id}/comments`}>view all</Link></button>
-                <button ><Link to={`/articles/${article_id}/comments`}>post</Link></button>
         </section>
         </div>
     )

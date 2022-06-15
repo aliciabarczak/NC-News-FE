@@ -110,10 +110,17 @@ h4 {
     grid-area: header;
   }
   .Nav{
+    padding-top: 2rem;
     flex-direction: column;
     justify-content: flex-start;
     grid-area: nav;
     max-width: 150px;
+    height: auto;
+}
+
+.navLinks{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .SingleArticle{
