@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard.jsx";
 import { getArticles } from "./../Utils/api.js";
+import SortBy from "./SortBy.jsx"
 
 
 export default function ListOfArticles({search}) {
@@ -16,7 +17,9 @@ useEffect(() => {
 }, [search]);
 
 if(isLoading) return <p>...loading</p>
-    return (
+    return ( 
+    <div>
+        <SortBy />
         <main className="ListOfArticles">
         {articles.map(({article_id, title, author, created_at, comment_count, votes}) => {
             return (
@@ -31,5 +34,5 @@ if(isLoading) return <p>...loading</p>
             )
         })}
         </main>
-    )
+    </div>)
 }
