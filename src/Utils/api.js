@@ -7,6 +7,7 @@ const articlesApi = axios.create({
 export const getArticles = (search) => {
     let path = "/articles"
     if (search) path += search
+    //console.log(path)
     return articlesApi.get(path).then(({ data }) => {
         return data
     })

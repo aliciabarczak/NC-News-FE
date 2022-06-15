@@ -8,7 +8,6 @@ export default function ListOfArticles({search}) {
 const [fetchedArticles, setFetchedArticles] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
 
-
 useEffect(() => {
     getArticles(search).then(({articles}) => {
         setFetchedArticles(articles);
@@ -19,7 +18,7 @@ useEffect(() => {
 if(isLoading) return <p>...loading</p>
     return ( 
     <div>
-        <SortBy fetchedArticles={fetchedArticles} setFetchedArticles={setFetchedArticles}/>
+        <SortBy search={search} setFetchedArticles={setFetchedArticles}/>
         <main className="ListOfArticles">
         {fetchedArticles.map(({article_id, title, author, created_at, comment_count, votes}) => {
             return (
