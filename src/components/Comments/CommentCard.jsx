@@ -8,21 +8,21 @@ export default function ({allComments, setAllComments, setDeletedCommentMsg, del
 const {user} = useContext(UserContext);
 const [commentToDelete, setCommentToDelete ] = useState("");
 const [exisitngComments, setExisitngComments] = useState([]);
-let disabledButton = false; 
+const [disabledButton, setDisabledButton ] = useState(false)
 
 
 useEffect(() => {
     deleteComment(commentToDelete).then(() => {
         setAllComments((currentComments) => {
-            const copyCurrentComments = currentComments;
+            const copyCurrentComments = [...currentComments]
             currentComments.map((comment, index) => {
                 if (commentToDelete === comment.comment_id) {
                     copyCurrentComments.splice(index, 1)
-                    setAllComments([...copyCurrentComments])
+                    setAllComments(copyCurrentComments)
                 }
             })
         })
-        disabledButton = true;
+        setDisabledButton(true)
         setDeletedCommentMsg(true)
      })
 }, [commentToDelete])
@@ -38,7 +38,7 @@ return (
         <b className="commentVote">votes ({votes})</b>
         <div>
         {author === user
-            ? <button className="deleteCommentBtn" disabled={disabledButton} onClick={() => {setCommentToDelete(comment_id)}}>delete</button> 
+            ? <button className="deleteCommentBtn" onClick={() => {setCommentToDelete(comment_id)}}>delete</button> 
             :  null } 
         </div>
         </section>
