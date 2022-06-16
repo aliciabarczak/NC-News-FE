@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getArticleById } from "./../Utils/api.js";
-import Likes from "./Likes.jsx"
+import { getArticleById } from "./../../Utils/api.js";
+import Likes from "./../Likes.jsx"
 
 export default function SingleArticle() {
 let { article_id } = useParams(); 

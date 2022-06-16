@@ -49,3 +49,10 @@ export const getUsers = () => {
         return data
     })
 }
+
+export const deleteComment = (comment_id) => {
+    console.log(comment_id)
+    return articlesApi.delete(`/comments/${comment_id}`).then(() => {
+        return "deleted!"
+    })
+}

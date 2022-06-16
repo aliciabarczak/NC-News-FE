@@ -132,6 +132,10 @@ h4 {
 
 }
 
+.deleteCommentBtn{
+  margin-left: 50%;
+}
+
 @media (min-width: 600px) {
   .logInBtn{
     margin-left:80px;

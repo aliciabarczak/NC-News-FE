@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CommentsCard from "./CommentsCard.jsx"
+import ListOfComments from "./../Comments/ListOfComments.jsx"
 
 export default function ArticleCard({article_id, title, author, created_at, comment_count, votes}) {
     return (

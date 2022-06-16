@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard.jsx";
-import { getArticles } from "./../Utils/api.js";
+import { getArticles } from "./../../Utils/api.js";
 import SortBy from "./SortBy.jsx"
 
 

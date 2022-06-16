@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import {postComment} from "./../Utils/api.js"
+import {postComment} from "./../../Utils/api.js"
 
 export default function PostComment({article_id}){
 const [body, setBody] = useState("");

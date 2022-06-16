@@ -1,10 +1,10 @@
 import './App.css';
 import Header from "./components/Header.jsx"
 import Nav from "./components/Nav.jsx"
-import ListOfArticles from "./components/ListOfArticles.jsx"
+import ListOfArticles from "./components/Articles/ListOfArticles.jsx"
 import {Routes, Route, useLocation, Link} from "react-router-dom";
-import SingleArticle from "./components/SingleArticle.jsx"
-import CommentsCard from "./components/CommentsCard.jsx"
+import SingleArticle from "./components//Articles/SingleArticle.jsx"
+import ListOfComments from "./components/Comments/ListOfComments.jsx"
 import {useState} from "react";
 import LogInPage from "./components/LogInPage.jsx"
 import { UserContext } from "./components/User.js"
@@ -26,7 +26,7 @@ function App() {
         <Route path="/articles" element={ <ListOfArticles search={search} />} />
         <Route path={`/articles${search}`} element={ <ListOfArticles />} />
         <Route path="/articles/:article_id" element={ <SingleArticle/>} />
-        <Route path="/articles/:article_id/comments" element={ <CommentsCard />}/>
+        <Route path="/articles/:article_id/comments" element={ <ListOfComments />}/>
         <Route path="/login" element={ <LogInPage />}/> 
       </Routes>
     </div>
