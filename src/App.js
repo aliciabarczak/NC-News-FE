@@ -12,7 +12,7 @@ import { UserContext } from "./components/User.js"
 
 function App() {
   const {search} = useLocation()
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState("jessjelly")
 
   return (
     <div>

@@ -4,19 +4,27 @@ import { useParams } from "react-router-dom";
 import {useState, useEffect} from "react";
 import {deleteComment} from "./../../Utils/api.js"
 
-export default function ({allComments}){
-
+export default function ({allComments, setAllComments}){
 const {user} = useContext(UserContext);
 const [commentToDelete, setCommentToDelete ] = useState("");
-const [deletedCommentMsg, setDeletedCommentMsg ] = useState(false)
+const [deletedCommentMsg, setDeletedCommentMsg ] = useState(false);
+const [exisitngComments, setExisitngComments] = useState([]);
 
-  useEffect(() => {
-    deleteComment(commentToDelete).then((sucessMsg) => {
+
+useEffect(() => {
+    deleteComment(commentToDelete).then(() => {
         setDeletedCommentMsg(true)
-    }).catch((err) => {
-        console.log(err)
+        setAllComments((currentComments) => {
+            const copyCurrentComments = currentComments;
+            currentComments.map((comment, index) => {
+                if (commentToDelete === comment.comment_id) {
+                    copyCurrentComments.splice(index, 1)
+                    setAllComments([...copyCurrentComments])
+                }
+            })
+        })
     })
-}, [commentToDelete])
+    }, [commentToDelete])
 
 return (
 <>

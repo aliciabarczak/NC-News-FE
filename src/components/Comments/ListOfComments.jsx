@@ -29,8 +29,8 @@ return (
     <div className="CommentCard">
     <h3>All Comments for:</h3>
     <h2 className="CommentsCardHeader">{articleTitle}</h2>
-    <PostComment article_id={article_id} />
-    <CommentCard allComments={allComments}/>
+    <PostComment article_id={article_id} setAllComments={setAllComments} />
+    <CommentCard allComments={allComments} setAllComments={setAllComments} />
     </div>
     )
 

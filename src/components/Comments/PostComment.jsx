@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 import {postComment} from "./../../Utils/api.js"
 
-export default function PostComment({article_id}){
+export default function PostComment({article_id, setAllComments}){
 const [body, setBody] = useState("");
 const [username, setUsername] = useState("");
 const [sucessMessage, setSucessMessage] = useState(false)
@@ -11,6 +11,9 @@ const handleSubmit = (event) => {
     event.preventDefault();
     postComment(article_id, body, username).then(({createdComment}) => {
         setSucessMessage(true)
+        setAllComments((currentComments) => {
+            return [...currentComments, createdComment]
+        })
         setBody("")
         setUsername("")
     }).catch((err) => {
