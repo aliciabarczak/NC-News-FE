@@ -8,17 +8,21 @@ export default function ({allComments}){
 
 const {user} = useContext(UserContext);
 const [commentToDelete, setCommentToDelete ] = useState("");
-const [deletedCommentMsg, setDeletedCommentMsg ] = useState("")
+const [deletedCommentMsg, setDeletedCommentMsg ] = useState(false)
 
   useEffect(() => {
     deleteComment(commentToDelete).then((sucessMsg) => {
-        setDeletedCommentMsg(sucessMsg)
+        setDeletedCommentMsg(true)
     }).catch((err) => {
         console.log(err)
     })
 }, [commentToDelete])
 
 return (
+<>
+{(deletedCommentMsg)
+    ? <p className="sPostCommentMsg">Your comment has been deleted!</p> 
+    : null}
 <ul className="Comments">
     {allComments.map(({comment_id, body, author, votes, created_at}) => {
         return (
@@ -30,12 +34,11 @@ return (
         <div>
         {author === user
             ? <button className="deleteCommentBtn" onClick={() => {setCommentToDelete(comment_id)}}>delete</button> 
-            : (deletedCommentMsg) 
-            ? <p className="sDeletedCommentMsg">{deletedCommentMsg}</p> 
             :  null } 
         </div>
         </section>
         )
     })}
 </ul>
+</>
 )}
