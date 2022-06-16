@@ -4,16 +4,14 @@ import { useParams } from "react-router-dom";
 import {useState, useEffect} from "react";
 import {deleteComment} from "./../../Utils/api.js"
 
-export default function ({allComments, setAllComments}){
+export default function ({allComments, setAllComments, setDeletedCommentMsg, deletedCommentMsg}){
 const {user} = useContext(UserContext);
 const [commentToDelete, setCommentToDelete ] = useState("");
-const [deletedCommentMsg, setDeletedCommentMsg ] = useState(false);
 const [exisitngComments, setExisitngComments] = useState([]);
 
 
 useEffect(() => {
     deleteComment(commentToDelete).then(() => {
-        setDeletedCommentMsg(true)
         setAllComments((currentComments) => {
             const copyCurrentComments = currentComments;
             currentComments.map((comment, index) => {
@@ -23,14 +21,11 @@ useEffect(() => {
                 }
             })
         })
-    })
-    }, [commentToDelete])
+        setDeletedCommentMsg(true)
+     })
+}, [commentToDelete])
 
 return (
-<>
-{(deletedCommentMsg)
-    ? <p className="sPostCommentMsg">Your comment has been deleted!</p> 
-    : null}
 <ul className="Comments">
     {allComments.map(({comment_id, body, author, votes, created_at}) => {
         return (
@@ -48,5 +43,4 @@ return (
         )
     })}
 </ul>
-</>
 )}

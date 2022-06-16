@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 import {postComment} from "./../../Utils/api.js"
 
-export default function PostComment({article_id, setAllComments}){
+export default function PostComment({article_id, setAllComments, deletedCommentMsg}){
 const [body, setBody] = useState("");
 const [username, setUsername] = useState("");
 const [sucessMessage, setSucessMessage] = useState(false)
@@ -12,7 +12,7 @@ const handleSubmit = (event) => {
     postComment(article_id, body, username).then(({createdComment}) => {
         setSucessMessage(true)
         setAllComments((currentComments) => {
-            return [...currentComments, createdComment]
+            return [createdComment, ...currentComments]
         })
         setBody("")
         setUsername("")
@@ -27,11 +27,13 @@ const handleSubmit = (event) => {
 return (
 <div className="postCommentForm">
     <form className="postComment" onSubmit={handleSubmit}>
-        <div> {sucessMessage === true
-                ? <p className="sPostCommentMsg">Your comment has been posted!</p> 
-                : failMessage === true 
-                ? <p className="fPostCommentMsg">Invalid username and/or missing comment body</p>
-                : null } </div>
+        <div> {deletedCommentMsg === true
+            ? <p className="sPostCommentMsg">Your comment has been sucsesfully deleted!</p> 
+            : sucessMessage === true
+            ? <p className="sPostCommentMsg">Your comment has been sucsesfully posted!</p> 
+            : failMessage === true 
+            ? <p className="fPostCommentMsg">Invalid username and/or missing comment body</p>
+            : null } </div>
         <label><p>Post comment:</p> 
             <input 
                 className="postCommentTxtBx" 
