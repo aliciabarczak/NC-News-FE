@@ -1,112 +1,127 @@
+/*ELEMENTS */
+h4 {
+  font-style: italic;
+  }
 body {
   margin: 0;
+  }   
+p {
+  font-size: 15px;
 }
 
+  /*HEADER */
 .Header {
   display: flex;
-  margin-left: 40%;
-}
+  justify-content: center;
+  }
 
+/*NAV*/
 .Nav{
     display: flex;
     justify-content: space-evenly;
     border: solid;
     padding: 1rem;
-}
+  }
 
 .Nav p {
   margin: 15px;
-}
+  }
 
+/*ARTICLE CARD*/
 .ArticleCard {
   border: solid; 
   text-align: left;
   margin: 10px;
   padding: 1rem;
-}
+  }
 
-h4 {
-  font-style: italic;
-}
 
 .cardText{
   margin-left: 15px
-}
+  }
 
+/*COMMENTS BUTTONS*/
 .CommentsButtons{
   margin: 2px;
-}
+  }
 
+.deleteCommentBtn{
+    margin-left: 50%;
+  }
+
+.submit-btn{
+    margin-left: 0px;
+  }
+  
+  
+/*COMMENTS*/
 .Comments{
   text-align: left;
   list-style: none;
   margin: 15px;
-}
+  }
 
 .Comment{
   border: solid;
   padding: 1rem;
   margin-bottom: 5px;
-}
+  }
 
 .commentDate{
   font-style: italic;
   margin: 0px;
   font-size:15px;
-}
+  }
 
 .commentVote{
   font-size:15px;
-}
+  }
 
 .commentText{
   margin-bottom: 10px;
-}
+  }
 
 .postCommentTxtBx{
   width: 400px;
   height: 120px;
   margin: 15px;
-}
+ }
 .postCommentUsernameBx{
   width: 150px;
   margin: 15px;
-}
-.submit-btn{
-  margin-left: 0px;
-}
+ }
 
 .sPostCommentMsg {
   color: green;
-}
+ } 
 .fPostCommentMsg {
   color: red;
-}
-
-.likesButtons {
-  margin-right: 5px;
-}
-
-.CommentsCardHeader{
+ }
+ .CommentsCardHeader{
   grid-display: commentHeader; 
-}
+ }
 
 .postCommentMsg {
   colour: red;
-}
+ }
+/*LIKE BUTTONS*/
+ .likesButtons {
+  margin-right: 5px;
+  }
 
+/*SORT BY*/
 .SortByForm {
   display: flex;
   justify-content: flex-end;
-}
+ }
 
 .dropDown {
   padding: 0.5rem;
-}
+ }
 
 .dropDownMenu{
   margin-left: 5px;
-}
+ }
 
 .radio{
   display: flex;
@@ -114,15 +129,16 @@ h4 {
   align-items: center;
   margin-left: 15px;
   margin-right: 15px;
-}
+ }
 
 .Ascending {
   margin-right: 10px;
-}
+ }
 
-.logInText {
+/*LOG-IN PAGE*/
+ .logInText {
   grid-display: logInText;
-}
+ }
 
 .logInBtn{
   width: 70px;
@@ -130,11 +146,7 @@ h4 {
   margin-bottom: 10px;
   margin-top: 0px;
 
-}
-
-.deleteCommentBtn{
-  margin-left: 50%;
-}
+ }
 
 @media (min-width: 600px) {
   .logInBtn{
@@ -152,7 +164,7 @@ h4 {
     margin: 10px;
   }
   .Header {
-    margin-left: 52%;
+    justify-content: center;
     grid-area: header;
   }
   .Nav{
@@ -164,17 +176,17 @@ h4 {
     min-height: 1000px;
     height: auto;
     margin-top: 45px
-}
+ }
 
-.navLinks{
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
+  .navLinks{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 
-.SingleArticle{
-  margin: auto;
-  padding: 2rem;
-}
+  .SingleArticle{
+    margin: auto;
+    padding: 2rem;
+  }
 
   main{
     display: grid;
@@ -191,16 +203,16 @@ h4 {
     grid-template-rows: auto auto;
   
   }
-}
+ }
 
 @media (min-width: 1000px) {
   .Nav{
     max-width: 200px; 
-}
-.logInText {
-  grid-display: logInText;
-  margin-left: 10px
-}
+  }
+  .logInText {
+    grid-display: logInText;
+    margin-left: 10px
+  }
   main{
     grid-template-columns: repeat(3, 1fr);
   }
@@ -211,9 +223,8 @@ h4 {
       "nav main main main";
     grid-template-columns: 20% auto auto 15%;
     grid-template-rows: auto auto auto auto;
-  
   }
-}
+ }
 
 @media (min-width: 1200px) {
   main{
@@ -228,7 +239,7 @@ h4 {
     grid-template-rows: auto auto auto auto;
   
   }
-}
+ }
 
 @media (min-width: 1400px) {
   main{
@@ -243,5 +254,5 @@ h4 {
     grid-template-rows: auto auto auto auto auto auto;
   
   }
-}
+ }
 
