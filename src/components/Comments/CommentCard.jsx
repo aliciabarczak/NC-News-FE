@@ -8,6 +8,7 @@ export default function ({allComments, setAllComments, setDeletedCommentMsg, del
 const {user} = useContext(UserContext);
 const [commentToDelete, setCommentToDelete ] = useState("");
 const [exisitngComments, setExisitngComments] = useState([]);
+let disabledButton = false; 
 
 
 useEffect(() => {
@@ -21,6 +22,7 @@ useEffect(() => {
                 }
             })
         })
+        disabledButton = true;
         setDeletedCommentMsg(true)
      })
 }, [commentToDelete])
@@ -36,7 +38,7 @@ return (
         <b className="commentVote">votes ({votes})</b>
         <div>
         {author === user
-            ? <button className="deleteCommentBtn" onClick={() => {setCommentToDelete(comment_id)}}>delete</button> 
+            ? <button className="deleteCommentBtn" disabled={disabledButton} onClick={() => {setCommentToDelete(comment_id)}}>delete</button> 
             :  null } 
         </div>
         </section>
