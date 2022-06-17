@@ -15,7 +15,9 @@ export default function ArticleCard({
         <h2>{title}</h2>
         <h3>by {author}</h3>
         <h4>Posted on {created_at.split("T")[0]}</h4>
-        <Link to={`/articles/${article_id}`}>View Article</Link>
+        <Link className="viewAllBtn" to={`/articles/${article_id}`}>
+          view article
+        </Link>
         <h5>Likes({votes})</h5>
         <h5>Comments({comment_count})</h5>
         <button className="viewAllCommentsBts">

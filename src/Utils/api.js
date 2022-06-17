@@ -60,3 +60,9 @@ export const deleteComment = (comment_id) => {
     return "deleted!";
   });
 };
+
+export const getData = (search) => {
+  return articlesApi.get(`${search}`).then(({ data }) => {
+    return data;
+  });
+};

@@ -25,7 +25,7 @@ export default function SingleArticle() {
         Posted on {singleArticle.created_at.split("T")[0]} at{" "}
         {singleArticle.created_at.split("T")[1].split(".")[0]}
       </h4>
-      <p>{singleArticle.body}</p>
+      <p className="articleBody">{singleArticle.body}</p>
       <Likes article_id={article_id} votes={singleArticle.votes} />
       <h5>Comments({singleArticle.comment_count})</h5>
       <button className="viewAllCommentsBts">

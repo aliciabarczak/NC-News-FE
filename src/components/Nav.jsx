@@ -12,16 +12,21 @@ export default function Nav() {
 
   return (
     <nav className="Nav">
-      <Link className="navLinks" to="/">
-        Home
-      </Link>
-      {topics.map(({ slug }, index) => {
-        return (
-          <Link className="navLinks" to={`articles?topic=${slug}`} key={index}>
-            {slug}
-          </Link>
-        );
-      })}
+      <div className="links">
+        <Link className="navLinks" to="/">
+          home
+        </Link>
+        {topics.map(({ slug }, index) => {
+          return (
+            <Link
+              className="navLinks"
+              to={`articles?topic=${slug}`}
+              key={index}>
+              {slug}
+            </Link>
+          );
+        })}
+      </div>
     </nav>
   );
 }

@@ -11,24 +11,25 @@ import { UserContext } from "./components/User.js";
 
 function App() {
   const { search } = useLocation();
-  const [user, setUser] = useState("jessjelly");
+  const [user, setUser] = useState([]);
 
   return (
     <div>
       <UserContext.Provider value={{ user, setUser }}>
         <div className="App">
-          <Header />
           {typeof user === "string" ? (
             <p className="logInText">
-              Logged in as <mark>{user}</mark>
+              Logged in as: <mark>{user}</mark>
             </p>
           ) : (
-            <button className="logInBtn">
-              <Link to={"/login"}>Log In</Link>
-            </button>
+            <div className="logInText">
+              <Link to={"/login"}>Log in</Link>
+            </div>
           )}
+          <Header />
           <Nav />
           <Routes>
+            <Route path="/login" element={<LogInPage />} />
             <Route path="/" element={<ListOfArticles />} />
             <Route
               path="/articles"
@@ -40,7 +41,6 @@ function App() {
               path="/articles/:article_id/comments"
               element={<ListOfComments />}
             />
-            <Route path="/login" element={<LogInPage />} />
           </Routes>
         </div>
       </UserContext.Provider>

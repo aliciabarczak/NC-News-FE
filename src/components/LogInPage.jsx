@@ -32,7 +32,7 @@ export default function () {
   }, [fetchUsers]);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="logInForm" onSubmit={handleSubmit}>
       <p>Enter your username:</p>
       <label>
         <input
@@ -47,7 +47,6 @@ export default function () {
         </button>
       </label>
       <div>
-        {" "}
         {sucessMessage === true ? (
           <p className="sPostCommentMsg">Logged in as {user}!</p>
         ) : failMessage === true ? (

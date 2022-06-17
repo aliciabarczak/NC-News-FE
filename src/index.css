@@ -1,34 +1,74 @@
 /*ELEMENTS */
 h4 {
   font-style: italic;
+  font-size: 11px;
 }
+
+h2 {
+  font-size: 20px;
+  color: rgb(71, 71, 71);
+}
+
+h3 {
+  font-size: 15px;
+  color: rgb(71, 71, 71);
+}
+
 body {
-  margin: 0;
+  margin: 20px;
+  background-color: #f8efe5;
 }
 /*HEADER */
 .Header {
   display: flex;
   justify-content: center;
+  background-color: rgb(247, 234, 219);
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  background-color: rgb(71, 71, 71);
+  color: white;
 }
 
 /*NAV*/
 .Nav {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   border: solid;
+  border-width: 1px;
   padding: 1rem;
+  font-size: 12px;
+  height: 20px;
+  text-transform: uppercase;
+  background-color: rgb(71, 71, 71);
 }
 
-.Nav p {
-  margin: 15px;
+.navLinks {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /*ARTICLE CARD*/
 .ArticleCard {
   border: solid;
+  border-color: rgb(71, 71, 71);
   text-align: left;
   margin: 10px;
   padding: 1rem;
+  background-color: rgb(249, 244, 238);
+}
+
+.viewAllBtn {
+  font-size: 14px;
 }
 
 .cardText {
@@ -38,6 +78,7 @@ body {
 /*COMMENTS BUTTONS*/
 .CommentsButtons {
   margin: 2px;
+  font-size: 12px;
 }
 
 .deleteCommentBtn {
@@ -47,39 +88,58 @@ body {
 .submit-btn {
   margin-left: 0px;
 }
+/*SINGLE ARTICLE*/
+
+.articleBody {
+  font-size: 15px;
+}
 
 /*COMMENTS*/
 .Comments {
   text-align: left;
   list-style: none;
-  margin: 15px;
+  padding: none;
+  padding: 0rem;
+  margin: 20px;
+  background-color: rgb(249, 244, 238);
 }
 
 .Comment {
+  display: flex;
+  flex-direction: column;
   border: solid;
-  padding: 1rem;
+  padding: 0.7rem;
   margin-bottom: 5px;
+  margin-left: 0px;
 }
 
 .commentDate {
   font-style: italic;
   margin: 0px;
-  font-size: 15px;
+  font-size: 12px;
+}
+
+button.deleteCommentBtn {
+  margin: 0px;
 }
 
 .commentVote {
-  font-size: 15px;
+  padding-bottom: 2rem;
+  font-size: 12px;
+  margin-bottom: 3px;
 }
 
 .commentText {
   margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .postCommentTxtBx {
-  width: 400px;
-  height: 120px;
-  margin: 15px;
+  width: 250px;
+  margin: center;
+  height: 100px;
 }
+
 .postCommentUsernameBx {
   width: 150px;
   margin: 15px;
@@ -92,11 +152,11 @@ body {
   color: red;
 }
 .CommentsCardHeader {
-  grid-display: commentHeader;
+  grid-area: commentHeader;
 }
 
 .postCommentMsg {
-  colour: red;
+  color: red;
 }
 /*LIKE BUTTONS*/
 .likesButtons {
@@ -107,6 +167,7 @@ body {
 .SortByForm {
   display: flex;
   justify-content: flex-end;
+  font-size: 14px;
 }
 
 .dropDown {
@@ -131,20 +192,21 @@ body {
 
 /*LOG-IN PAGE*/
 .logInText {
-  grid-display: logInText;
-}
-
-.logInBtn {
-  width: 70px;
-  height: 35px;
-  margin-bottom: 10px;
-  margin-top: 0px;
+  grid-area: logInText;
+  font-size: 14px;
+  padding: 1rem;
 }
 
 @media (min-width: 600px) {
-  .logInBtn {
-    margin-left: 80px;
-    margin-top: 10px;
+  .logInText {
+    grid-area: logInText;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .logInForm {
+    height: 800px;
+    margin-right: 20%;
+    margin-top: 6%;
   }
 
   .postCommentTxtBx {
@@ -157,28 +219,32 @@ body {
     margin: 10px;
   }
   .Header {
-    justify-content: center;
     grid-area: header;
   }
   .Nav {
+    flex-direction: row;
     padding-top: 2rem;
-    flex-direction: column;
-    justify-content: flex-start;
     grid-area: nav;
-    max-width: 150px;
-    min-height: 1000px;
-    height: auto;
+    max-width: 110px;
+    height: 100%;
     margin-top: 45px;
   }
 
   .navLinks {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
   }
 
   .SingleArticle {
     margin: auto;
     padding: 2rem;
+    height: 1000px;
   }
 
   main {
@@ -190,31 +256,29 @@ body {
   .App {
     display: grid;
     grid-template-areas:
-      "header header logInText"
-      "nav main main";
-    grid-template-columns: 20% auto 25%;
-    grid-template-rows: auto auto;
+      "logInText logInText"
+      "header header"
+      "nav main";
+    grid-template-columns: 20% auto;
+    grid-template-rows: auto auto auto;
   }
 }
 
 @media (min-width: 1000px) {
-  .Nav {
-    max-width: 200px;
-  }
-  .logInText {
-    grid-display: logInText;
-    margin-left: 10px;
-  }
-  main {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .App {
     grid-template-areas:
-      "header header header logInText"
-      "nav main main main";
-    grid-template-columns: 20% auto auto 15%;
-    grid-template-rows: auto auto auto auto;
+      "logInText logInText logInText"
+      "header header header"
+      "nav main main";
+    grid-template-columns: 20% auto auto;
+    grid-template-rows: auto auto auto;
+  }
+  .Nav {
+    max-width: 120px;
+  }
+
+  main {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -225,10 +289,11 @@ body {
 
   .App {
     grid-template-areas:
-      "header header header header logInText"
-      "nav main main main main";
-    grid-template-columns: 15% auto auto auto 15%;
-    grid-template-rows: auto auto auto auto;
+      "logInText logInText logInText logInText"
+      "header header header header"
+      "nav main main main";
+    grid-template-columns: 15% auto auto auto;
+    grid-template-rows: auto auto auto;
   }
 }
 
@@ -239,9 +304,10 @@ body {
 
   .App {
     grid-template-areas:
-      "header header header header header logInText"
-      "nav main main main main main";
-    grid-template-columns: 10% auto auto auto auto 12%;
-    grid-template-rows: auto auto auto auto auto auto;
+      "logInText logInText logInText logInText logInText"
+      "header header header header header"
+      "nav main main main main";
+    grid-template-columns: 10% auto auto auto auto;
+    grid-template-rows: auto auto auto;
   }
 }
