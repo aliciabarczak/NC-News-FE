@@ -1,165 +1,158 @@
 /*ELEMENTS */
 h4 {
   font-style: italic;
-  }
+}
 body {
   margin: 0;
-  }   
-p {
-  font-size: 15px;
 }
-
-  /*HEADER */
+/*HEADER */
 .Header {
   display: flex;
   justify-content: center;
-  }
+}
 
 /*NAV*/
-.Nav{
-    display: flex;
-    justify-content: space-evenly;
-    border: solid;
-    padding: 1rem;
-  }
+.Nav {
+  display: flex;
+  justify-content: space-evenly;
+  border: solid;
+  padding: 1rem;
+}
 
 .Nav p {
   margin: 15px;
-  }
+}
 
 /*ARTICLE CARD*/
 .ArticleCard {
-  border: solid; 
+  border: solid;
   text-align: left;
   margin: 10px;
   padding: 1rem;
-  }
+}
 
-
-.cardText{
-  margin-left: 15px
-  }
+.cardText {
+  margin-left: 15px;
+}
 
 /*COMMENTS BUTTONS*/
-.CommentsButtons{
+.CommentsButtons {
   margin: 2px;
-  }
+}
 
-.deleteCommentBtn{
-    margin-left: 50%;
-  }
+.deleteCommentBtn {
+  margin-left: 50%;
+}
 
-.submit-btn{
-    margin-left: 0px;
-  }
-  
-  
+.submit-btn {
+  margin-left: 0px;
+}
+
 /*COMMENTS*/
-.Comments{
+.Comments {
   text-align: left;
   list-style: none;
   margin: 15px;
-  }
+}
 
-.Comment{
+.Comment {
   border: solid;
   padding: 1rem;
   margin-bottom: 5px;
-  }
+}
 
-.commentDate{
+.commentDate {
   font-style: italic;
   margin: 0px;
-  font-size:15px;
-  }
+  font-size: 15px;
+}
 
-.commentVote{
-  font-size:15px;
-  }
+.commentVote {
+  font-size: 15px;
+}
 
-.commentText{
+.commentText {
   margin-bottom: 10px;
-  }
+}
 
-.postCommentTxtBx{
+.postCommentTxtBx {
   width: 400px;
   height: 120px;
   margin: 15px;
- }
-.postCommentUsernameBx{
+}
+.postCommentUsernameBx {
   width: 150px;
   margin: 15px;
- }
+}
 
 .sPostCommentMsg {
   color: green;
- } 
+}
 .fPostCommentMsg {
   color: red;
- }
- .CommentsCardHeader{
-  grid-display: commentHeader; 
- }
+}
+.CommentsCardHeader {
+  grid-display: commentHeader;
+}
 
 .postCommentMsg {
   colour: red;
- }
+}
 /*LIKE BUTTONS*/
- .likesButtons {
+.likesButtons {
   margin-right: 5px;
-  }
+}
 
 /*SORT BY*/
 .SortByForm {
   display: flex;
   justify-content: flex-end;
- }
+}
 
 .dropDown {
   padding: 0.5rem;
- }
+}
 
-.dropDownMenu{
+.dropDownMenu {
   margin-left: 5px;
- }
+}
 
-.radio{
+.radio {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   margin-left: 15px;
   margin-right: 15px;
- }
+}
 
 .Ascending {
   margin-right: 10px;
- }
+}
 
 /*LOG-IN PAGE*/
- .logInText {
+.logInText {
   grid-display: logInText;
- }
+}
 
-.logInBtn{
+.logInBtn {
   width: 70px;
   height: 35px;
   margin-bottom: 10px;
   margin-top: 0px;
-
- }
+}
 
 @media (min-width: 600px) {
-  .logInBtn{
-    margin-left:80px;
+  .logInBtn {
+    margin-left: 80px;
     margin-top: 10px;
   }
-  
-  .postCommentTxtBx{
+
+  .postCommentTxtBx {
     width: 400px;
     height: 120px;
     margin: 10px;
   }
-  .postCommentUsernameBx{
+  .postCommentUsernameBx {
     width: 150px;
     margin: 10px;
   }
@@ -167,7 +160,7 @@ p {
     justify-content: center;
     grid-area: header;
   }
-  .Nav{
+  .Nav {
     padding-top: 2rem;
     flex-direction: column;
     justify-content: flex-start;
@@ -175,25 +168,25 @@ p {
     max-width: 150px;
     min-height: 1000px;
     height: auto;
-    margin-top: 45px
- }
+    margin-top: 45px;
+  }
 
-  .navLinks{
+  .navLinks {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
 
-  .SingleArticle{
+  .SingleArticle {
     margin: auto;
     padding: 2rem;
   }
 
-  main{
+  main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-area: main;
   }
-  
+
   .App {
     display: grid;
     grid-template-areas:
@@ -201,22 +194,21 @@ p {
       "nav main main";
     grid-template-columns: 20% auto 25%;
     grid-template-rows: auto auto;
-  
   }
- }
+}
 
 @media (min-width: 1000px) {
-  .Nav{
-    max-width: 200px; 
+  .Nav {
+    max-width: 200px;
   }
   .logInText {
     grid-display: logInText;
-    margin-left: 10px
+    margin-left: 10px;
   }
-  main{
+  main {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .App {
     grid-template-areas:
       "header header header logInText"
@@ -224,35 +216,32 @@ p {
     grid-template-columns: 20% auto auto 15%;
     grid-template-rows: auto auto auto auto;
   }
- }
+}
 
 @media (min-width: 1200px) {
-  main{
+  main {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   .App {
     grid-template-areas:
       "header header header header logInText"
       "nav main main main main";
-    grid-template-columns: 15% auto auto auto 15%;;
+    grid-template-columns: 15% auto auto auto 15%;
     grid-template-rows: auto auto auto auto;
-  
   }
- }
+}
 
 @media (min-width: 1400px) {
-  main{
+  main {
     grid-template-columns: repeat(5, 1fr);
   }
-  
+
   .App {
     grid-template-areas:
       "header header header header header logInText"
       "nav main main main main main";
-    grid-template-columns: 10% auto auto auto auto 12%;;
+    grid-template-columns: 10% auto auto auto auto 12%;
     grid-template-rows: auto auto auto auto auto auto;
-  
   }
- }
-
+}
