@@ -43,3 +43,15 @@ export const postComment = (article_id, body, username) => {
         return data
     })
 }
+
+export const getUsers = () => {
+    return articlesApi.get(`/users`).then(({ data }) => {
+        return data
+    })
+}
+
+export const deleteComment = (comment_id) => {
+    return articlesApi.delete(`/comments/${comment_id}`).then(() => {
+        return "deleted!"
+    })
+}

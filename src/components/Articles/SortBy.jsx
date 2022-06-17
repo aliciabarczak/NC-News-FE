@@ -1,6 +1,6 @@
 import {useState, useEffect } from "react";
 import {useSearchParams} from "react-router-dom"
-import {getArticles} from "./../Utils/api.js"
+import {getArticles} from "./../../Utils/api.js"
 
 export default function SortBy({setFetchedArticles}) {
     const [selectedOption, setSelectedOption ] = useState("created_at");

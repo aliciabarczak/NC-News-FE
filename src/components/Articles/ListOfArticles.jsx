@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard.jsx";
-import { getArticles } from "./../Utils/api.js";
+import { getArticles } from "./../../Utils/api.js";
 import SortBy from "./SortBy.jsx"
 
 
-export default function ListOfArticles({search}) {
+export default function ListOfArticles({search, user}) {
 const [fetchedArticles, setFetchedArticles] = useState([]);
 const [isLoading, setIsLoading] = useState(true);
 

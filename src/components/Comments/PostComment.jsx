@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
-import {postComment} from "./../Utils/api.js"
+import {postComment} from "./../../Utils/api.js"
 
-export default function PostComment({article_id}){
+export default function PostComment({article_id, setAllComments, deletedCommentMsg}){
 const [body, setBody] = useState("");
 const [username, setUsername] = useState("");
 const [sucessMessage, setSucessMessage] = useState(false)
@@ -11,6 +11,9 @@ const handleSubmit = (event) => {
     event.preventDefault();
     postComment(article_id, body, username).then(({createdComment}) => {
         setSucessMessage(true)
+        setAllComments((currentComments) => {
+            return [createdComment, ...currentComments]
+        })
         setBody("")
         setUsername("")
     }).catch((err) => {
@@ -23,12 +26,14 @@ const handleSubmit = (event) => {
 
 return (
 <div className="postCommentForm">
-    <form className="postComment" method="get" action="/PostedCommentMsg.jsx" onSubmit={handleSubmit}>
-        <div> {sucessMessage === true
-                ? <p className="sPostCommentMsg">Your comment has been posted!</p> 
-                : failMessage === true 
-                ? <p className="fPostCommentMsg">Invalid username and/or missing comment body</p>
-                : null } </div>
+    <form className="postComment" onSubmit={handleSubmit}>
+        <div> {deletedCommentMsg === true
+            ? <p className="sPostCommentMsg">Your comment has been sucsesfully deleted!</p> 
+            : sucessMessage === true
+            ? <p className="sPostCommentMsg">Your comment has been sucsesfully posted!</p> 
+            : failMessage === true 
+            ? <p className="fPostCommentMsg">Invalid username and/or missing comment body</p>
+            : null } </div>
         <label><p>Post comment:</p> 
             <input 
                 className="postCommentTxtBx" 
