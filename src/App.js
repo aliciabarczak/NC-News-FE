@@ -8,10 +8,12 @@ import ListOfComments from "./components/Comments/ListOfComments.jsx";
 import { useState } from "react";
 import LogInPage from "./components/LogInPage.jsx";
 import { UserContext } from "./components/User.js";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const { search } = useLocation();
   const [user, setUser] = useState([]);
+  console.log(search);
 
   return (
     <div>
@@ -41,6 +43,7 @@ function App() {
               path="/articles/:article_id/comments"
               element={<ListOfComments />}
             />
+            <Route path="*" element={<ErrorPage error={"404: Not Found"} />} />
           </Routes>
         </div>
       </UserContext.Provider>
