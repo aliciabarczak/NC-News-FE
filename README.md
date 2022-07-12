@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+#Alicia's NC News
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Front End React App
 
-## Available Scripts
+NC News is a news aggregation web app modelled on Reddit which I built in React.js during week nine of the Northcoders' Full Stack Developer Course.
 
-In the project directory, you can run:
+This project aims to demonstrate some of the skills I've learnt in three weeks of front end study, mostly dedicated to React subjects including:
 
-### `npm start`
+- React DOM
+- React Lifecycle
+- React Routing
+- Optimistic Rendering
+- Error Handling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This front end application interacts with the back end RESTful API I created during week six of the course. Details of the API may be found on Github: https://github.com/aliciabarczak/NC-News-BE.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Using NC News
 
-### `npm test`
+A working example of this API is published at: https://62ac9e81e8e50d74f7a61658--nc-news-practice-site.netlify.app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Functionality
 
-### `npm run build`
+For demonstration purposes, you will need to sign into the application as user "jessjelly".
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Homepage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+On loading, the homepage requests a list of topics and articles from the API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The list of all topics is passed to the Navigation component in order to generate the listed links in the Navigation sidebar
 
-### `npm run eject`
+The list of all articles are passed to a seperate component in order to display a summary of all articles, or articles by topic, based on the supplied route.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The articles may also be sorted by:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- date
+- vote count
+- comment count
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Individual Article Routes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The Article component requests and displays an article based on the supplied route. It displays:
 
-## Learn More
+- the full article
+- associated meta data:
+- author
+- publication date
+- vote and comment counts
+- option to view the comments associated with the article
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Authorised users may:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- vote the article up or down
+- publish comments on the article
+- delete their own comments
 
-### Code Splitting
+### Errors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Bad route errors result in the relevant 400/404 page.
 
-### Analyzing the Bundle Size
+API errors result in the API error status code and message being displayed to the user.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Installing a Local Copy
 
-### Making a Progressive Web App
+These instructions will help you to get a copy of NC News up and running on your local machine.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Pre-requite Software and Packages
 
-### Advanced Configuration
+Ensure you have the installed Node.js 17.7.1.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Fork and clone this repository from: https://github.com/ben-web/NC-News-Front-End
 
-### Deployment
+Inside this new directory, install the required npm packages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+npm i
+```
 
-### `npm run build` fails to minify
+To start the application, run this command in the CLI:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+npm run start
+```
