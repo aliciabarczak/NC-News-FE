@@ -46,7 +46,6 @@ export default function SortBy({ setFetchedArticles }) {
       </label>
       <label className="radio">
         <div className="Descending">
-          Descending
           <input
             className="radio-btn"
             type="radio"
@@ -56,9 +55,9 @@ export default function SortBy({ setFetchedArticles }) {
               setRadioOption(event.target.value);
               setSearchParams({ order: `${event.target.value}` });
             }}></input>
+          Descending
         </div>
         <div className="Ascending">
-          Ascending
           <input
             className="radio-btn"
             type="radio"
@@ -68,6 +67,7 @@ export default function SortBy({ setFetchedArticles }) {
               setRadioOption(event.target.value);
               setSearchParams({ order: `${event.target.value}` });
             }}></input>
+          Ascending
         </div>
       </label>
     </form>

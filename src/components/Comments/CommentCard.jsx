@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { UserContext } from "./../User.js";
 import { useState, useEffect } from "react";
 import { deleteComment } from "./../../Utils/api.js";
+import "../../index.css";
 
 export default function ({
   allComments,
