@@ -16,7 +16,7 @@ This front end application interacts with the back end RESTful API I created dur
 
 ## Using NC News
 
-A working example of this API is published at: https://62ac9e81e8e50d74f7a61658--nc-news-practice-site.netlify.app.
+A working example of this API is published at: https://nc-news-practice-site.netlify.app.
 
 ### Functionality
 
